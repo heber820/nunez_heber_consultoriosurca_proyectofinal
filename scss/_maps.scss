@@ -1,0 +1,71 @@
+$mapturnos: (administrar_turnos: rgb(6, 247, 154), cancelar_turnos: rgb(146, 41, 9));
+
+@each $turnos, $color in $mapturnos {
+    .#{$turnos} {
+        background-color: $color;
+        padding: 10px;
+        
+}
+    
+}
+
+$estilos_botones: (
+        colores: white,
+        margenizq: 10%,
+        margeninf: 10px,
+        centro: center,
+        bordes: 25%,
+        -webkit-border-radius: 10%,
+        -moz-border-radius: 10%,
+        -ms-border-radius: 10%,
+        -o-border-radius: 10%,
+);
+
+button{
+    color: map-get($estilos_botones, colores);
+    margin-left: map-get($estilos_botones, margenizq);
+    margin-bottom: map-get($estilos_botones, margeninf);
+    text-align: map-get($estilos_botones, centro);
+    border-radius: map-get($estilos_botones, bordes);
+    -webkit-border-radius: map-get($estilos_botones, bordes);
+    -moz-border-radius: map-get($estilos_botones, bordes);
+    -ms-border-radius: map-get($estilos_botones, bordes);
+    -o-border-radius: map-get($estilos_botones, bordes);
+}
+
+/*extend*/
+.boton_consultarhorario{
+    @extend button;
+    background-color: rgb(3, 70, 47);
+    color: white;
+    padding: 10px;
+}
+/*mixins*/
+@mixin threed-button($base-color){
+    $shadow: "";
+  
+    @for $i from 1 through 4{
+      $shadow: $shadow + "#{$i}px #{$i}px 0px 2px " + darken($base-color,$i*5) + ",";
+    } 
+  
+    $shadow : str-slice($shadow,0,str-length($shadow)-1);
+    appearance: none;
+    border:none;
+    background: $base-color;
+    box-shadow: unquote($shadow);
+  }
+  .botonesv2{
+    @include threed-button(#ff4081);
+    font-size:18px;
+    color:white;
+  }
+  .botonesv2--naranja{
+    @include threed-button(#b95909);
+    font-size:18px;
+    color:rgb(245, 243, 243);
+  }
+  .botonesv2--azul{
+    @include threed-button(#4b05ee);
+    font-size:18px;
+    color:rgb(245, 243, 243);
+  }

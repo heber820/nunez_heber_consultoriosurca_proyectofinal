@@ -1,0 +1,63 @@
+@import "variables", "maps";
+@import "especialidades.scss";
+@import "contacto.scss";
+@import "quienes_somos.scss";
+@import "turnero.scss";
+@import "reset";
+@import "header","footer";
+
+  body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    .body{
+      background-color:rgb(20, 20, 20);
+      color: $colortexto;
+  }
+    .titulo{
+      text-align: center;
+      text-transform: uppercase;
+      .imagenes{
+        border-radius: 50%;
+        padding: 20px;
+      }
+      .texto{
+      text-align: center;
+      margin-left: 30px;
+      margin-right: 30px;
+      line-height: 30px;
+      color: $colortexto;
+      
+    }
+  }
+}
+
+.subtitulos {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+ul{
+  list-style: none;
+}
+
